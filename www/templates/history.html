@@ -1,0 +1,37 @@
+<ion-view title="历史记录">
+
+  <ion-header-bar class="bar-subheader item-input-inset">
+    <label class="item-input-wrapper">
+      <i class="icon ion-ios7-search placeholder-icon"></i>
+      <input type="search" placeholder="Search" ng-model="searchKey" autocorrect="off" ng-change="search()">
+      <button class="button button-clear" ng-click="clearSearch()">X</button>
+    </label>
+  </ion-header-bar>
+  
+  <ion-content has-header="true" has-subheader="true">
+	  <ion-list>
+	    <ion-item ng-repeat="word in words | reverse | limitTo:20" type="item-text-wrap" href="#/event/detail/{{word._id}}">
+	      <h3>{{word.word_fr}}</h3>
+	      <p>{{word.means}}</p>
+	    </ion-item>
+	  </ion-list>
+  </ion-content>
+
+  <ion-footer-bar class="bar-stable">
+    <div class="buttons pull-left">
+      <button class="button button-clear" ng-click="back()">
+        <i class="icon ion-ios7-arrow-left"></i>
+        返回
+      </button>
+      <!-- <i class="icon ion-ios7-arrow-back"></i> -->
+    </div>
+
+    <div class="buttons pull-right">
+      <button class="button button-clear" ng-click="emptyHistory()">
+        <i class="icon ion-ios7-trash-outline"></i>
+        清空历史记录
+      </button>
+    </div>
+  </ion-footer-bar>
+
+</ion-view>

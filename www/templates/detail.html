@@ -1,0 +1,46 @@
+<ion-view title="{{word.word_fr}}">
+  <ion-content style="top: 44px;">
+    <div class="list card">
+      <div class="item item-divider">
+        法汉词典
+      </div>
+
+      <div class="item item-body">
+        <p>
+
+          <a href="#" class="subdued">
+            <i class="icon ion-ios7-star" ng-repeat="i in getArray(4) track by $index"></i>
+            <i class="icon ion-ios7-star-outline" ng-repeat="i in getArray(2) track by $index"></i>
+          </a>
+<!--           <a href="#" class="subdued">
+            5
+            <i class="icon ion-ios7-eye"></i>
+          </a> -->
+        </p>
+        <p>
+          {{word.means}}
+        </p>
+        
+      </div>
+
+    </div>
+
+  </ion-content>
+  
+  <ion-footer-bar class="bar-stable">
+    <div class="buttons pull-left">
+      <button class="button button-clear" ng-click="back()">
+        <i class="icon ion-ios7-arrow-left"></i>
+        返回
+      </button>
+      <!-- <i class="icon ion-ios7-arrow-back"></i> -->
+    </div>
+
+    <div class="buttons pull-right">
+      <button class="button button-clear" ng-click="favor(word)">收藏</button>
+      <button class="button button-clear">笔记</button>
+      <button class="button button-clear">分享</button>
+    </div>
+  </ion-footer-bar>
+
+</ion-view>
